@@ -1,7 +1,9 @@
 from pymongo import MongoClient
 
-mongoC = MongoClient(host="localhost",port=27175)
-db = mongoC.get_database("test")
-collectinTemp = db.people
-for var in collectinTemp:
-    print(var)
+client = MongoClient('localhost', 27017)
+db = client.test
+collectinT = db.people
+
+for val in collectinT.find({}):
+    print(val['firstname'])
+
