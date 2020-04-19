@@ -13,6 +13,10 @@ class Event:
         self.files.append(path + file_name)
         return self
 
+    def add_bin_file(self, byteArr):
+        self.bin_files.append(byteArr)
+        return self
+
     # def inser_bin_file(self, binFile):
     #     self.bin_files.append(binFile)
     #     return self
