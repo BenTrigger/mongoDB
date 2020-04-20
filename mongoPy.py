@@ -36,7 +36,8 @@ try:
     thebytes = pickle.dumps(data)  # size in bytes 1372196
 
     if sys.getsizeof(thebytes) >= 16793598:  #max byte size
-        file_id = fs.put(thebytes)
+        #fs.put(fs.get(a), filename="foo", bar="baz")
+        file_id = fs.put(thebytes, filename="source_file_name_here",bar="status_new")
         #print(pickle.loads(fs.get(file_id).read()))
         exit(1)
     else:
