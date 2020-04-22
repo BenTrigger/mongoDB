@@ -18,16 +18,3 @@ def printit():
 
 
 printit()
-
-from apscheduler.scheduler import Scheduler
-
-sched = Scheduler()
-sched.start()
-
-def some_job():
-    print "Every 10 seconds"
-
-sched.add_interval_job(some_job, seconds = 10)
-
-....
-sched.shutdown()
