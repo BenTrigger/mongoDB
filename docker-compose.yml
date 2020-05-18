@@ -1,0 +1,43 @@
+version: '3'
+services:
+  # database:
+  #   image: 'mongo:latest'
+  #   container_name: 'mongo_db'
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=admin
+  #     - MONGO_INITDB_ROOT_PASSWORD=admin
+  #     - MONGO_INITDB_DATABASE=mispar
+  #   volumes:
+  #     # - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+  #     - ./mongo-volume:/data/db
+  #   # deploy:
+  #   #   replicas: 3
+  #   #   update_config:
+  #   #     parallelism: 2
+  #   #     delay: 10s
+  #   ports:
+  #     - '27017-27019:27017-27019'
+  #
+  # robomong:
+  #   image: 'farzadghanei/robomongo:latest'
+  #   container_name: 'robomongo'
+  #   environment:
+  #     - DISPLAY=$DISPLAY
+  #   volumes:
+  #     - "/tmp/.X11-unix/:/tmp/.X11-unix"
+
+  python_stream:
+    image: 'python:ben'
+    container_name: 'auto_stream'
+    volumes: 
+      - ${HOME}/Dockers/:/app
+    command:
+      - 'python'
+      - 'app/app.py'
+    shm_size: '16gb'
+    # deploy:
+    #   replicas: 3
+    #   update_config:
+    #     parallelism: 2
+    #     delay: 10s
+
