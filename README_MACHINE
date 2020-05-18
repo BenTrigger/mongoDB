@@ -1,0 +1,11 @@
+curl -L https://github.com/docker/machine/releases/download/v0.16.0/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine --output docker_machine.file
+curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -O
+
+
+sudo mv path..../docker-machine-Linux-x86_64 /usr/local/bin/docker-machine 
+&& 
+chmod +x /usr/local/bin/docker-machine
+
+sudo mv path..../docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+&&
+sudo chmod +x /usr/local/bin/docker-compose
